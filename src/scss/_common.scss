@@ -11,6 +11,22 @@
 			@include blind;
 		}
 	}
+	.btns{
+		padding: 0 28px;
+		box-sizing: border-box;
+	}
+	.btn{
+		max-width: $max;
+		margin: 0 auto;
+		width: 100%;
+		line-height: 66px;
+		text-align: center;
+		height: 66px;
+		border-radius: 10px;
+		color: $white;
+		display: block;
+		font-size: 20px;
+	}
 	.item1{
 		background: rgb(240,240,242); /* Old browsers */
 		background: -moz-linear-gradient(left,  rgba(240,240,242,1) 1%, rgba(240,240,242,1) 41%, rgba(240,240,242,1) 41%, rgba(223,224,226,1) 56%, rgba(223,224,226,1) 100%); /* FF3.6-15 */
@@ -25,7 +41,9 @@
 		background: #F3EBE0;
 	}
 	.item4{
-		background: #242423;
+		@include bg("bg4.jpg", repeat, 50% 50%, auto 100%); 
+		// @include bg("img4.jpg");
+		// background: url("/img/bg4.jpg");
 	}
 	.item5{
 		background: #F3EBE0;
@@ -40,5 +58,12 @@
 	.item8{
 		background: #EFCF94;
 		padding-bottom: 52px;
+		.btn{
+			background: #E5B46E;
+			&.bule{
+				margin-top: 20px;
+				background: #1A335B;
+			}
+		}
 	}
 }
