@@ -5,10 +5,10 @@ const Index = () => {
 	let check = ""; 
 	if ( navigator.platform ) {
 		if ( pcDevice.indexOf(navigator.platform.toLowerCase()) < 0 ) {
-			console.log('MOBILE');
+			//console.log('MOBILE');
 			check = "MOBILE";
 		} else {
-			console.log('PC');
+			//console.log('PC');
 			check = "PC";
 		}
 	}
