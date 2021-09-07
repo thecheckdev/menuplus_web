@@ -5,6 +5,11 @@ const Index = () => {
 	let check = ""; 
 	if ( navigator.platform ) {
 		check = (pcDevice.indexOf(navigator.platform.toLowerCase()) < 0 ) ? "MOBILE" : "PC";
+		if ( pcDevice.indexOf(navigator.platform.toLowerCase()) < 0 ) {
+			check = "MOBILE";
+		} else {
+			check = "PC";
+		}
 	}
 	const goThecheck = () => {
 		if(check === "MOBILE")window.location.href = "https://cdn.thecheck.co.kr/page/thecheck/app.html";
