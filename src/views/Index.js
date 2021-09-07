@@ -4,25 +4,14 @@ const Index = () => {
 	const pcDevice = "win16|win32|win64|mac|macintel";
 	let check = ""; 
 	if ( navigator.platform ) {
-		if ( pcDevice.indexOf(navigator.platform.toLowerCase()) < 0 ) {
-			console.log('MOBILE');
-			check = "MOBILE";
-		} else {
-			console.log('PC');
-			check = "PC";
-		}
+		check = (pcDevice.indexOf(navigator.platform.toLowerCase()) < 0 ) ? "MOBILE" : "PC";
 	}
 	const goThecheck = () => {
-		if(check === "MOBILE"){
-			window.location.href = "https://cdn.thecheck.co.kr/page/thecheck/app.html";
-		}else{
-			window.location.href = "https://thecheck.co.kr/appdown/";
-		}
-		// 
+		if(check === "MOBILE")window.location.href = "https://cdn.thecheck.co.kr/page/thecheck/app.html";
+		else window.location.href = "https://thecheck.co.kr/appdown/";
 	}
 	return (
 		<section className="rending">
-			{check}
 			<h1 className="blind">돈쭐나고 싶은 사장님을 위해 온푸몰에서 딱 맞는 인생 메뉴를 찾아드립니다</h1>
 			<article className="item1">
 				<img src={process.env.PUBLIC_URL + "/img/img1.jpg"} alt="돈쭐나고 싶으세요? 인생맛집 5분창업 #샵인샵 #업종변경 #창업 #사업확장 #배달전문 #신메뉴추가 메뉴플러스"/>
