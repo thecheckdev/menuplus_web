@@ -1,0 +1,44 @@
+.rending{
+	article{
+		width: 100%;
+		img{
+			max-width: $max;
+			width: 100%;
+			margin: 0 auto;
+			display: block;
+		}
+		span{
+			@include blind;
+		}
+	}
+	.item1{
+		background: rgb(240,240,242); /* Old browsers */
+		background: -moz-linear-gradient(left,  rgba(240,240,242,1) 1%, rgba(240,240,242,1) 41%, rgba(240,240,242,1) 41%, rgba(223,224,226,1) 56%, rgba(223,224,226,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(240,240,242,1) 1%,rgba(240,240,242,1) 41%,rgba(240,240,242,1) 41%,rgba(223,224,226,1) 56%,rgba(223,224,226,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(240,240,242,1) 1%,rgba(240,240,242,1) 41%,rgba(240,240,242,1) 41%,rgba(223,224,226,1) 56%,rgba(223,224,226,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f2', endColorstr='#dfe0e2',GradientType=1 ); /* IE6-9 */
+	}
+	.item2{
+		background: #EFCF94;
+	}
+	.item3{
+		background: #F3EBE0;
+	}
+	.item4{
+		background: #242423;
+	}
+	.item5{
+		background: #F3EBE0;
+	}
+	.item6{
+		background: #FFFCF7;
+		padding-bottom: 40px;
+	}
+	.item7{
+		background: #EFCF94;
+	}
+	.item8{
+		background: #EFCF94;
+		padding-bottom: 52px;
+	}
+}
