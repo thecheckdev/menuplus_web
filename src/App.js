@@ -9,8 +9,8 @@ function App() {
 	return (
 		<QuestionProvider>
 			{/* <Link to="/">랜딩페이지</Link> <br/> */}
-			{/* <Link to="/question">Question</Link> */}
-			<Switch>
+			{/* <Link to="/question">Question</Link>  HashRouter */}
+			<Switch> 
 				<Route path="/" component={Index} exact={true}/>
 				<Route path="/question" component={Question}/>
 				<Route path="/*" render={()=> history.push("/")} />
