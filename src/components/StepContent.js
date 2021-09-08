@@ -7,18 +7,20 @@ const QestionStep = (props) => {
 	const dispatch = useQuestionDispatch();
 	const goNextStep = (e) => {
 		if(props.step === 1) {
-			console.log(e.target.getAttribute("data-index"));
 			const temp = (e.target.getAttribute("data-index") === "0" ? 3 : 2);
-			console.log(temp);
 			props.getNextStep(temp);
 			return;
 		}else if(props.step === 2){
 			props.getNextStep(3); 
 			return;
 		}
-		dispatch({
-			type:"ADDSCORE", 
-			result: e.target.getAttribute("data-result"),
+		const temp = e.target.getAttribute("data-result");
+		const resultArr = temp.split(",");
+		resultArr.map(item => {
+			dispatch({
+				type:"ADDSCORE", 
+				id: item,
+			});
 		});
 		
 	}

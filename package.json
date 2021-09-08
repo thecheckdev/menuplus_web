@@ -2,7 +2,7 @@
   "name": "question",
   "version": "0.1.0",
   "private": true,
-	"homepage": "https://d7i8kghgxgson.cloudfront.net",
+	"homepage": "http://d24chliwt2r8if.cloudfront.net/",  
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
