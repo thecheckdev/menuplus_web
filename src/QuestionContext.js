@@ -4,8 +4,8 @@ import React, { useReducer, createContext, useContext } from "react";
 const InitialQuestion = {
 	r0:{
 		name: "제로",
-		score: 100,
-		benefit:100,
+		score: 0,
+		benefit:0,
 	},
 	r1:{
 		name: "닭발",
@@ -20,6 +20,7 @@ const InitialQuestion = {
 	r3:{
 		name: "족발",
 		score: 0,
+		benefit:0,
 	},
 	r4:{
 		name: "제육볶음",
@@ -45,13 +46,18 @@ const InitialQuestion = {
 
 function QuestionReducer(state, action) {
 	switch (action.type) {
-	case "SELLECT":
-		console.log("SELLECT");
-		return state.concat(action);
 	case "ADDSCORE":
 		console.log(action);
+		const resultArr = action.result.split(",");
+		console.log(resultArr);
+		resultArr.map(item =>{
+			console.log(item+"-----item----");
+			console.log(" = "+state[item].score);
+			state[item].score++;
+			console.log("===============");
+		});
+		console.log("state");
 		// const id = action.id;
-		state[action.id].score++;
 		return {
 			...state
 		};
@@ -87,6 +93,7 @@ export function useQuestionState() {
 export function useQuestionDispatch() {
   const context = useContext(QuestionDispatchContext);
   console.log("--useQuestionDispatch--");
+  console.log(context);
   if (!context) {
     throw new Error("Cannot find QuestionProvider");
   }

@@ -83,6 +83,15 @@ const Question = () => {
 		<>
 			<h1>step : {step}</h1>
 			{step > 0 ? <QuestionStep getNextStep={getNextStep} step={step} data={initialQuestion["step"+step]} /> : <Start getNextStep={getNextStep}/>}
+			<br/><br/><br/>
+			==========-<br/>
+			{JSON.stringify(resultList["r1"])}<br/>
+			{JSON.stringify(resultList["r2"])}<br/>
+			{JSON.stringify(resultList["r3"])}<br/>
+			{JSON.stringify(resultList["r4"])}<br/>
+			{JSON.stringify(resultList["r5"])}<br/>
+			{JSON.stringify(resultList["r6"])}<br/>
+			{JSON.stringify(resultList["r7"])}<br/>
 		</>
 	);
 };
