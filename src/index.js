@@ -9,7 +9,7 @@ import "react-app-polyfill/stable";
 import "scss/style.scss"; 
 
 ReactDOM.render(
-	<BrowserRouter>
+	<BrowserRouter basename={process.env.PUBLIC_URL}>
 		<React.StrictMode>
 			<App/>
 		</React.StrictMode>

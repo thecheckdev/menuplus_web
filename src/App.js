@@ -1,7 +1,7 @@
 import {Route, Switch, useHistory} from "react-router-dom";
 import Index from "views/Index";
 import Question from "views/Question";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { QuestionProvider } from "QuestionContext";
 
 function App() {
