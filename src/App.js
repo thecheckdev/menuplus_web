@@ -12,7 +12,7 @@ function App() {
 			{/* <Link to="/question">Question</Link> */}
 			<Switch>
 				<Route path="/" component={Index} exact={true}/>
-				<Route path="/question" component={Question} exact={true}/>
+				<Route path="/question" component={Question}/>
 				<Route path="/*" render={()=> history.push("/")} />
 			</Switch>
 		</QuestionProvider>
