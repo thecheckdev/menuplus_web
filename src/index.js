@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from "react-router-dom";
 import 'react-app-polyfill/ie9';
-import "react-app-polyfill/ie11";
+// import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
 import "scss/style.scss"; 
 

@@ -12,7 +12,7 @@ const Index = () => {
 		}
 	}
 	const goThecheck = () => {
-		if(check === "MOBILE")window.location.href = "https://cdn.thecheck.co.kr/page/thecheck/app.html";
+		if(check === "MOBILE")window.location.href = "https://landing.thecheck.co.kr/v1/goto?referer=WEB&refererKey=W001";
 		else window.location.href = "https://thecheck.co.kr/appdown/";
 	}
 	return (
@@ -41,10 +41,10 @@ const Index = () => {
 			</article>
 			<article className="item8">
 				<img src={process.env.PUBLIC_URL + "/img/img8.jpg"} alt="돈쭐나고 싶으세요? 인생맛집 5분창업 #샵인샵 #업종변경 #창업 #사업확장 #배달전문 #신메뉴추가 메뉴플러스"/>
-				<div className="btns">
-					<button type="button" className="btn bule" onClick={goThecheck}>더체크 메뉴플러스 바로가기</button>
-				</div>
 			</article>
+			<div className="btns fix">
+				<button type="button" className="btn bule" onClick={goThecheck}>더체크 메뉴플러스 바로가기</button>
+			</div>
 		</section>
 	);
 };

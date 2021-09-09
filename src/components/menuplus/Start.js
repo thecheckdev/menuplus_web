@@ -5,10 +5,10 @@ const Start = (props) => {
 		props.getNextStep(1);
 	}
 	return (
-		<div>
+		<article className="step1"> 
 			<button type="button" onClick={onStart}>1분 맞춤메뉴 찾기</button><br/><br/>
 			<button type="button">공유하기</button>
-		</div>
+		</article>
 	);
 };
 

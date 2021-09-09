@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import Start from "components/Start";
-import QuestionStep from "components/StepContent";
-import {useQuestionState, useQuestionDispatch} from "QuestionContext";
+import Start from "components/menuplus/Start";
+import QuestionStep from "components/menuplus/StepContent";
+import Result from "components/menuplus/Result";
+import {useQuestionState, useQuestionDispatch} from "components/menuplus/QuestionContext";
 
 const initialQuestion ={
 	step1:{
@@ -71,28 +72,70 @@ const initialQuestion ={
 };
 
 const Question = () => {
-
 	const resultList = useQuestionState();
-	// const dispatch = useQuestionDispatch();
 	const [step, setStep] = useState(0);
+	const [resultIndex, setResultIndex] = useState(-1);
 	console.log(resultList);
 	const getNextStep = (data) => {
 		setStep(data);
+		if(data === 8) {
+			let maxObj = {
+				max : {
+					score : resultList[0].score,
+					index : 0,
+				},
+			};
+			let scoreArr = resultList.map((item, i) => {
+				if (maxObj.max.score < item.score){
+					maxObj.max = {
+						score : item.score,
+						index : i,
+					};
+				}
+				return item.score;
+			});
+			let checkMax = [];
+			scoreArr.map((item, i) => {
+				if( item === maxObj.max.score ){
+					checkMax.push({
+						score : item,
+						index : i,
+					})
+				}
+			});
+			if(checkMax.length === 1){
+				setResultIndex(maxObj.max.index);
+			}else {
+				scoreArr = [];
+				checkMax.map((item, i) => {
+					if(resultList[item.index].step6 > 0){
+						item.score += resultList[item.index].benefit;
+						if(resultList[item.index].benefit !== 0) scoreArr.push(item);
+					}
+				});
+				if(scoreArr.length === 1){
+					setResultIndex(scoreArr[0].index);
+					return;
+				}
+				maxObj = scoreArr[0];
+				scoreArr.map((item, i) => {
+					if (maxObj.score < item.score) maxObj = item;
+				});
+				setResultIndex(maxObj.index);
+			}
+			return;
+		}
 	}
 	return (
-		<>
-			<h1>step : {step}</h1>
-			{step > 0 ? <QuestionStep getNextStep={getNextStep} step={step} data={initialQuestion["step"+step]} /> : <Start getNextStep={getNextStep}/>}
-			<br/><br/><br/>
-			==========-<br/>
-			{JSON.stringify(resultList["r1"])}<br/>
-			{JSON.stringify(resultList["r2"])}<br/>
-			{JSON.stringify(resultList["r3"])}<br/>
-			{JSON.stringify(resultList["r4"])}<br/>
-			{JSON.stringify(resultList["r5"])}<br/>
-			{JSON.stringify(resultList["r6"])}<br/>
-			{JSON.stringify(resultList["r7"])}<br/>
-		</>
+		<section className="question">
+			{/* <h1>step : {step} result :{resultIndex}</h1> */}
+			{step === 0 ? <Start getNextStep={getNextStep}/> : step < 8 ? <QuestionStep getNextStep={getNextStep} step={step} data={initialQuestion["step"+step]}/>:<Result resultIndex={resultIndex}/>}
+			{/* <br/><br/><br/> */}
+			{/* ============-<br/> */}
+			{/* {
+				resultList.map((item, i) =>  <p key={i}>{JSON.stringify(item)}</p>)
+			} */}
+		</section>
 	);
 };
 

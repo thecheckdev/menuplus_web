@@ -1,19 +1,16 @@
 import {Route, Switch, useHistory} from "react-router-dom";
-import Index from "views/Index";
-import Question from "views/Question";
-// import { Link } from "react-router-dom";
-import { QuestionProvider } from "QuestionContext";
+import Index from "views/menuplus/Index";
+import Question from "views/menuplus/Question";
+import { QuestionProvider } from "components/menuplus/QuestionContext";
 
 function App() {
 	const history = useHistory();
 	return (
 		<QuestionProvider>
-			{/* <Link to="/">랜딩페이지</Link> <br/> */}
-			{/* <Link to="/question">Question</Link>  HashRouter */}
 			<Switch> 
-				<Route path="/" component={Index} exact={true}/>
-				<Route path="/question" component={Question}/>
-				<Route path="/*" render={()=> history.push("/")} />
+				<Route path="/menuplus" component={Index} exact={true}/>
+				<Route path="/menuplus/question" component={Question}/>
+				<Route path="/*" render={()=> history.push("/menuplus")} />
 			</Switch>
 		</QuestionProvider>
 	);
