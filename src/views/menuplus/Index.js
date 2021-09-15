@@ -49,14 +49,14 @@ const Index = () => {
 			</article>
 			<article className="item6">
 				<img src={"https://event.thecheck.co.kr/img/menuplus/rending/img6.jpg"} alt="배달앱 매출 상위 1% 비밀 전격 공개, 업 종변경 복수 브랜드 최적화 메뉴, 경쟁력 있는 매출 상위 메뉴, 조리시간 줄이는 초간편 메뉴, 메뉴플러스에선 365일 외식업장 인기메뉴가 초특가!"/>
-				{/* <Link className="btn" to="menuplus/question">사장님을 위한 메뉴 추천 받기</Link> */}
+				<Link className="btn" to="menuplus/question">사장님을 위한 메뉴 추천 받기</Link>
 			</article>
 			<article className="item7">
 				<img src={"https://event.thecheck.co.kr/img/menuplus/rending/img7.jpg"} alt="잘 나가는 메뉴 단 3개로월 1천만원 수익 달성 가능! 바싹불고기(3인분) 마진 248% , 오돌뼈 마진 206%, 찜닭(4인분) 마진 171%"/>
 			</article>
 			<article className="item8">
 				<img src={"https://event.thecheck.co.kr/img/menuplus/rending/img8.jpg"} alt="돈쭐나고 싶으세요? 인생맛집 5분창업 #샵인샵 #업종변경 #창업 #사업확장 #배달전문 #신메뉴추가 메뉴플러스"/>
-				{/* <Link className="btn" to="menuplus/question">사장님을 위한 메뉴 추천 받기</Link> */}
+				<Link className="btn" to="menuplus/question">사장님을 위한 메뉴 추천 받기</Link>
 			</article>
 			<div className="btns fix">
 				<button type="button" className="btn" onClick={goThecheck}>더체크 메뉴플러스 바로가기</button>

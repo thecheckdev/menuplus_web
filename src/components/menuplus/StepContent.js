@@ -20,7 +20,7 @@ const QestionStep = (props) => {
 			setLoading(true);
 			setTimeout(function() {
 				props.getNextStep(props.step+1); 
-			  }, 2000);
+			  }, 2500);
 			return;
 		}
 		const temp = e.target.getAttribute("data-result");
@@ -53,8 +53,6 @@ const QestionStep = (props) => {
 		const temp = props.answer[step-1];
 		if(step > 2){
 			const arr = temp.split(",");
-			console.log(arr);
-			console.log(list);
 			const resultList = list.map((item, i) => {
 				arr.map((index) => {
 					index = index * 1;
@@ -70,7 +68,6 @@ const QestionStep = (props) => {
 				})	
 				return item;
 			});
-			console.log(resultList);
 			dispatch({
 				type:"SETSCORE", 
 				resultList: resultList,

@@ -4,15 +4,17 @@ import {useQuestionState} from "components/menuplus/QuestionContext";
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 
 const Result = ({ match }) => {
-	const resultIndex = match.params.index * 1;
+	let resultIndex = match.params.index * 1;
 	const [loading, setLoading] = useState(true);
 	const history = useHistory();
 	// const shareUrl = ["https://baro.lk/LGggR","https://baro.lk/zaKPH","https://baro.lk/o1IRG","https://baro.lk/WdbYT","https://baro.lk/2YG9z","https://baro.lk/m0jHu","https://baro.lk/Z8FxF","https://baro.lk/kKAnA"];
 	const shareUrl = "https://baro.lk/lc5Za";
 
 	if(isNaN(resultIndex) || resultIndex > 7  || resultIndex < 0){
-		history.push("/menuplus/question");
-		window.location.reload();
+		resultIndex = 1;
+		// alert("오류가 발생했습니다. 다시 시도해주세요.");
+		// history.push("/menuplus/question");
+		// window.location.reload();
 	}
 	const url = useRef();
 	const resultList = useQuestionState();
@@ -97,7 +99,7 @@ const Result = ({ match }) => {
 							resultIndex === 0 ? <h1><strong>마진율 0%</strong>를 선택한 사장님<br/>이제 욕심내서 장사하셔야죠!</h1> :
 							<h1><strong>메뉴플러스</strong>가 찾은<br/>사장님의 <strong>맞춤메뉴</strong>는</h1>
 						}
-						<img src={"https://event.thecheck.co.kr/img/menuplus/question/result"+(resultIndex === 0 ? (resultIndex+1 ): resultIndex)+".jpg"} alt={tit+"이미지"}/>
+						<img src={"https://event.thecheck.co.kr/img/menuplus/question/result"+(resultIndex === 0 ? (resultIndex): resultIndex)+".jpg"} alt={tit+"이미지"}/>
 						{
 							resultIndex === 0 ? 
 								<>
