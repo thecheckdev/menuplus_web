@@ -1,15 +1,16 @@
 /*Hashing*/
 $version: "?v=1";
-$url: "//event.thecheck.co.kr/img/"; 
+$url: "https://event.thecheck.co.kr/img/"; 
 
 /*Font 및 Color*/
-$family: "Apple SD Gothic Neo", "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Malgun Gothic","맑은 고딕","돋움",Dotum,"굴림",Gulim,Helvetica,sans-serif;
-$bold: normal;
-$weight :100; 
+$family: "NanumSquareOTF", "Apple SD Gothic Neo", "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Malgun Gothic","맑은 고딕","돋움",Dotum,"굴림",Gulim,Helvetica,sans-serif;
+$bold: bold;
+$weight :normal; 
 $font:16px; 
 
 $width: 100%;
 $max: 768px;
+$min: 320px;
 
 $white: #ffffff;
 $black : #000000;
@@ -26,3 +27,5 @@ $yellow: #fdef72;
 $point:#32b8d3; 
 $red:#DF3333;
 $orange:#FF6F06;
+
+$mp_point:#C93400;

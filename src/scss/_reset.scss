@@ -11,7 +11,7 @@ html,body,div,ul,li,dl,dt,dd,ol,p,h1,h2,h3,h4,h5,h6,form,fieldset {
   padding:0;
 }
 html {
-  min-width: 280px;
+  min-width: $min;
   -webkit-text-size-adjust:none;
 }
 h1,h2,h3,h4,h5,h6{
