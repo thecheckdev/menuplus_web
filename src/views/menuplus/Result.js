@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {useHistory} from "react-router-dom";
 import {useQuestionState} from "components/menuplus/QuestionContext";
 import { HelmetProvider, Helmet } from 'react-helmet-async';
+import {Link} from "react-router-dom";
 
 const Result = ({ match }) => {
 	let resultIndex = match.params.index * 1;
@@ -21,9 +22,7 @@ const Result = ({ match }) => {
 	const tit = resultList[resultIndex].name;
 	const menu = resultList[resultIndex].menu;
 	useEffect(()=>{
-		window.document.getElementsByTagName("html")[0].classList.add("question_result");
-		window.document.getElementsByTagName("html")[0].classList.remove("question");
-		window.document.getElementsByTagName("html")[0].classList.remove("rending");
+		window.document.getElementsByTagName("html")[0].className = "question_result";
 	});
 	useEffect(()=>{
 		setLoading(false);
@@ -84,7 +83,7 @@ const Result = ({ match }) => {
 		else window.location.href = "https://thecheck.co.kr/appdown/";
 	}
 	return (
-		<section className={(resultIndex === 0 ? "zero":"")}>
+		<section className={(resultIndex === 0 ? "zero ":"") + (loading ? " hide" : "")}>
 			<HelmetProvider>
 				<Helmet>
 					<meta property="og:title" content="메뉴플러스"/>
@@ -92,7 +91,7 @@ const Result = ({ match }) => {
 					<meta property="og:description" content="돈쭐나고 싶은 사장님을 위해 딱 맞는 인생 메뉴를 찾아드립니다"/>
 				</Helmet>
 			</HelmetProvider>
-			<article className={"best "+(loading ? "hide" : "")}>
+			<article className="best">
 				<div className="inner">
 					<div className="unit">
 						{
@@ -191,7 +190,9 @@ const Result = ({ match }) => {
 							<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_url.png"} alt="url 공유하기"/>
 						</button>
 					</div>
+					{/* <button type="button" onClick={goThecheck} className="btn">앱 설치하기</button> */}
 					<button type="button" onClick={goThecheck} className="btn">앱 설치하기</button>
+					<Link className="btn line" to="/menuplus/question">다른 메뉴 추천 받기</Link>
 				</div>
 			</article>
 		</section>

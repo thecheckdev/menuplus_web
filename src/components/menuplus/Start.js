@@ -14,7 +14,7 @@ const Start = (props) => {
 						objectType: 'feed',
 						content: {
 							title: "메뉴플러스사장님을 위한 맞춤메뉴를 찾아드려요",
-							imageUrl: "https://event.thecheck.co.kr/img/img1.jpg",
+							imageUrl: "https://event.thecheck.co.kr/img/img1.jpg?v=1",
 							link: {
 								mobileWebUrl: "https://event.thecheck.co.kr/#/menuplus/question",
 								webUrl: "https://event.thecheck.co.kr/#/menuplus/question",
@@ -49,25 +49,25 @@ const Start = (props) => {
 		<section className="start">
 			<h1><strong>메뉴플러스</strong>가<br/>사장님을 위한<br/><strong>맞춤메뉴</strong>를<br/>찾아드려요</h1>
 			<div className="bx">
-				<span className="logo"><img src={"https://event.thecheck.co.kr/img/menuplus/question/logo.png"} alt="더체크 메뉴플러스"/></span>
+				<span className="logo"><img src={"https://event.thecheck.co.kr/img/menuplus/question/logo.png?v=1"} alt="더체크 메뉴플러스"/></span>
 				<button type="button" className="btn" onClick={onStart}>1분 맞춤메뉴 찾기</button>
 				<div className="btns_sns">
 					<div className="tit">맞춤메뉴 찾기<strong>공유하기</strong></div>
 					<button type="button" onClick={() => share("kakao")}>
-						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_kakao.png"} alt="카카오 공유하기"/>
+						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_kakao.png?v=1"} alt="카카오 공유하기"/>
 					</button>
 					<button type="button" onClick={() => share("face")}>
-						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_face.png"} alt="페이스북 공유하기"/>
+						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_face.png?v=1"} alt="페이스북 공유하기"/>
 					</button>
 					<button type="button" onClick={() => share("twitter")}>
-						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_tw.png"} alt="트위터 공유하기"/>
+						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_tw.png?v=1"} alt="트위터 공유하기"/>
 					</button>
 					<button type="button" onClick={() => share("naver")}>
-						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_naver.png"} alt="네이버 공유하기"/>
+						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_naver.png?v=1"} alt="네이버 공유하기"/>
 					</button>
 					<button type="button" onClick={() => share("url")}>
 						<input type="text" defaultValue="https://event.thecheck.co.kr/#/menuplus/question" ref={url} className="blind" />
-						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_url.png"} alt="url 공유하기"/>
+						<img src={"https://event.thecheck.co.kr/img/menuplus/question/ico_url.png?v=1"} alt="url 공유하기"/>
 					</button>
 				</div>
 			</div>

@@ -9,8 +9,8 @@ const initialQuestion ={
 	step1:{
 		q : "외식업장을 <strong>운영중</strong>인가요?",
 		a : [
-				["Y", ""],
-				["N", ""],
+				["예", ""],
+				["아니오", ""],
 		],
 	},
 	step2:{
@@ -92,9 +92,7 @@ const Question = () => {
 		});
 	}
 	useEffect(()=>{
-		window.document.getElementsByTagName("html")[0].classList.add("question");
-		window.document.getElementsByTagName("html")[0].classList.remove("question_result");
-		window.document.getElementsByTagName("html")[0].classList.remove("rending");
+		window.document.getElementsByTagName("html")[0].className = "question";
 	});
 	useEffect(()=>{
 		setLoading(false);
@@ -181,7 +179,7 @@ const Question = () => {
 			<HelmetProvider>
 				<Helmet>
 					<meta property="og:title" content="메뉴플러스"/>
-					<meta property="og:image" content="https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg"/>
+					<meta property="og:image" content="https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg?v=1"/>
 					<meta property="og:description" content="돈쭐나고 싶은 사장님을 위해 딱 맞는 인생 메뉴를 찾아드립니다"/>
 				</Helmet>
 			</HelmetProvider>

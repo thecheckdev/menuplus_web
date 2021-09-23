@@ -1,10 +1,14 @@
+.btn{
+	transition: background-color 0.2s;
+	box-sizing: border-box;
+}
 .rending{
 	min-width: 280px;
     max-width: 100%;
 	article{
 		width: 100%;
 		img{
-			max-width: $max;
+			max-width: 768px;
 			width: 100%;
 			margin: 0 auto;
 			display: block;
@@ -12,6 +16,9 @@
 		span{
 			@include blind;
 		}
+	}
+	.hide{
+		visibility: hidden;
 	}
 	.btns{
 		padding: 0 28px;
@@ -31,6 +38,10 @@
 		background: #501806;
 		@include media{
 			font-size: calcRem(16px);
+		}
+		&:active{
+			background: $white;
+			color:#501806;
 		}
 	}
 	.item1{
@@ -58,6 +69,7 @@
 		padding-bottom: 40px;
 		.btn{
 			margin-top: 30px;
+			border: 1px solid #501806;
 		}
 	}
 	.item7{
@@ -67,9 +79,13 @@
 		background: #EFCF94;
 		padding-bottom: 106px;
 		.btn{
-			background: #E5B46E;
+			background: #FFFAF0;
 			color:#1A335B;
-			margin: 50px auto 20px;
+			margin: 15px auto 20px;
+			&:active{
+				background: #1A335B;
+				color:$white;
+			}
 		}
 	}
 	.btns.fix{
@@ -82,6 +98,11 @@
 		backdrop-filter: blur(5px);
 		.btn{
 			background: #1A335B;
+			&:active{
+				background: #FFFAF0;
+				color:#1A335B;
+				border: 1px solid #1A335B;
+			}
 		}
 	}
 }
@@ -106,12 +127,12 @@
 		height: 100%;
 	}
 	.container{
-		max-width: $max;
+		// max-width: $max;
 		margin: 0 auto;
 		position: relative;
 	}
 	.hide{
-		display: none;
+		visibility: hidden;
 	}
 	.btn {
 		display: block;
@@ -126,6 +147,23 @@
 		color:$white;
 		font-weight: $bold;
 		border-radius: 4px;
+		transition: all 0.2s;
+		border:1px solid $mp_point;
+		&:active{
+			background: #E8B59A;
+			color:$white;
+			border:1px solid #E8B59A;
+		}
+		&.line{
+			background: $white;
+			color:$mp_point;
+			border:1px solid $mp_point;
+			&:active{
+				background: #E8B59A;
+				color:$white;
+				border:1px solid #E8B59A;
+			}
+		}
 	}
 }
 .question{
@@ -146,30 +184,35 @@
 			position: relative;
 			text-align: center;
 			overflow: hidden;
-			&:before{
-				transition: all 0.2s;
-				content:"";
-				@include setContent(90px,180px, block, absolute);
-				@include bg("menuplus/question/bg_start1.png", no-repeat, 0 0, 100%);
-				top:0;
-				left: 0;
-				@media (max-width: 400px) {
-					left: -50px;
+			@include bg("menuplus/question/bg_start.jpg", no-repeat, 50% 0, auto 180px);
+			@media (max-width: 768px) {
+				background: none;
+				&:before{
+					transition: all 0.2s;
+					content:"";
+					@include setContent(90px,180px, block, absolute);
+					@include bg("menuplus/question/bg_start1.png", no-repeat, 0 0, 100%);
+					top:0;
+					left: 0;
+					@media (max-width: 400px) {
+						left: -50px;
+					}
 				}
-			}
-			&:after{
-				transition: all 0.2s;
-				content:"";
-				@include setContent(90px,180px, block, absolute);
-				@include bg("menuplus/question/bg_start2.png", no-repeat, 0 0, 100%);
-				top:0;
-				right: 0;
-				@media (max-width: 400px) {
-					right: -45px;
+				&:after{
+					transition: all 0.2s;
+					content:"";
+					@include setContent(90px,180px, block, absolute);
+					@include bg("menuplus/question/bg_start2.png", no-repeat, 0 0, 100%);
+					top:0;
+					right: 0;
+					@media (max-width: 400px) {
+						right: -45px;
+					}
 				}
 			}
 		}
 		.bx{
+			max-width: $max;
 			width: 86.6%;
 			position: absolute;
 			text-align: center;
@@ -180,8 +223,12 @@
 				display: none;
 			}
 			.logo{
+				width: 150px;
 				display: inline-block;
 				margin-bottom: 36px;
+				img{
+					width: 100%;
+				}
 			}
 			.btns_sns{
 				display: block;
@@ -222,6 +269,7 @@
 	}
 	.step{
 		width: 86.6%;
+		max-width: $max;
 		height: 100%;
 		margin: 0 auto;
 		display: flex;
@@ -240,18 +288,25 @@
 				justify-content: space-between; 
 				align-items: center;
 				color: $mp_point;
+				font-weight: $bold;
+				font-size: calcRem(18px);
 				.btn_home{
 					background: #D1C0A8;
 					border-radius: 25px;
 					color: $white;
 					padding: 5px 10px;
 					font-size: calcRem(14px);
+					&:active{
+						background: $mp_point;
+						color: $white;
+					}
 				}
 			}
 			.bx_bar{
 				@include setContent(100%,4px, block, relative,#D1C0A8);
 				.bar{
 					@include setContent(100%,4px, block, absolute,$mp_point);
+					transition: all 0.4s;
 					&.fill1{
 						width: 14.28%;
 					}
@@ -277,11 +332,13 @@
 			width: 100%;
 			padding: 72px 0 64px;
 		}
-		.btn.bg_white{
-			background: $white;
-			border: 1px solid $mp_point;
-			color: $mp_point;
-			margin-bottom: 12px;
+		.btn.line{
+			margin-bottom: 16px;
+			&:active{
+				background: $mp_point;
+				color: $white;
+				border: 1px solid $mp_point;
+			}
 		}
 		h2{
 			text-align: center;
@@ -290,14 +347,17 @@
 			margin-bottom: 71px;
 		}
 		&.com{
-			height: 100%;
-			min-height: 500px;
-			align-content: space-between;
+			h2{
+				width: 100%;
+				text-align: center;
+				font-size: 24px;
+				line-height: 32px;
+				padding-bottom: 246px;
+				margin-bottom: 0;
+				@include bg("menuplus/question/img_truck.jpg", no-repeat, 50% 100%, 246px); 
+			}
 			.cont{
-				flex-grow: 1;
-				display: flex;
-				align-items: center;
-				justify-content: center;
+				padding-bottom: 20px;
 			}
 			.btn{
 				flex-shrink: 0;
@@ -310,6 +370,9 @@
 	font-weight: 100;
 	.container{
 		max-width: 100%;
+	}
+	.btn+.btn{
+		margin-top: 16px;
 	}
 	.best{
 		width: 100%;
@@ -382,11 +445,11 @@
 			}
 		}
 		.menu_info{
-			// img{
-			// 	width: 180px;
-			// 	margin: 16px auto;
-			// 	display: block;
-			// }
+			overflow: hidden;
+			img{
+				width: 100%;
+				width: calc(100% + 2px);
+			}
 			h3{
 				font-weight: $bold;
 				margin-bottom: 26px;
@@ -451,7 +514,7 @@
 		text-align: center;
 		.unit{
 			width: 86.47%;
-			max-width: 664px;
+			max-width: $max;
 			margin: 0 auto;
 			padding: 40px 0;
 			&.bg{
@@ -468,6 +531,7 @@
 		}
 		h1{
 			font-size: calcRem(24px);
+			line-height: calcRem(32px);
 			margin-bottom: 24px;
 			color: $mp_point;
 			font-weight: $bold;
@@ -491,7 +555,6 @@
 			}
 		}
 	}
-
 	.zero{
 		h2{
 			font-weight: 100;

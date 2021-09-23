@@ -92,7 +92,7 @@ const QestionStep = (props) => {
 				{}
 				<h2 dangerouslySetInnerHTML ={{ __html: title}}></h2>
 				{
-					props.step < 8 && answerList.map((item,i) => <button type="button" className="btn bg_white" key={i} data-index={i} data-result={item[1]} onClick={goNextStep} dangerouslySetInnerHTML ={{ __html: item[0]}}></button>)
+					props.step < 8 && answerList.map((item,i) => <button type="button" className="btn line" key={i} data-index={i} data-result={item[1]} onClick={goNextStep} dangerouslySetInnerHTML ={{ __html: item[0]}}></button>)
 				}
 			</div>
 			{

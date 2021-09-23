@@ -1,5 +1,5 @@
 /*Hashing*/
-$version: "?v=1";
+$version: "?v=2";
 $url: "https://event.thecheck.co.kr/img/"; 
 
 /*Font 및 Color*/
@@ -9,7 +9,8 @@ $weight :normal;
 $font:16px; 
 
 $width: 100%;
-$max: 768px;
+// $max: 768px;
+$max: 664px;
 $min: 320px;
 
 $white: #ffffff;
