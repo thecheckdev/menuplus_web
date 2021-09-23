@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from "react";
 import {Link} from "react-router-dom";
-import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
 	const [loading, setLoading] = useState(true);
@@ -24,13 +24,13 @@ const Index = () => {
 	}
 	return (
 		<section className={(loading ? " hide" : "")}>
-			<HelmetProvider>
-				<Helmet>
-					<meta property="og:title" content="메뉴플러스"/>
-					<meta property="og:image" content="https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg?v=1"/>
-					<meta property="og:description" content="돈쭐나고 싶은 사장님을 위해 딱 맞는 인생 메뉴를 찾아드립니다"/>
-				</Helmet>
-			</HelmetProvider>
+			<Helmet>
+				<title>메뉴플러스 - 인생 메뉴를 찾아드립니다</title>
+				<meta name="description" content="돈쭐나고 싶은 사장님을 위한 맛집창업 솔루션" data-react-helmet="true"/> 
+				<meta property="og:title" content="메뉴플러스" data-react-helmet="true"/>
+				<meta property="og:image" content="https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg?v=1" data-react-helmet="true"/>
+				<meta property="og:description" content="돈쭐나고 싶은 사장님을 위한 맛집창업 솔루션" data-react-helmet="true"/>
+			</Helmet>
 			<h1 className="blind">돈쭐나고 싶은 사장님을 위해 온푸몰에서 딱 맞는 인생 메뉴를 찾아드립니다</h1>
 			<article className="item1">
 				<img src={"https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg?v=1"} alt="돈쭐나고 싶으세요? 인생맛집 5분창업 #샵인샵 #업종변경 #창업 #사업확장 #배달전문 #신메뉴추가 메뉴플러스"/>
@@ -52,7 +52,7 @@ const Index = () => {
 				<Link className="btn" to="menuplus/question">사장님을 위한 메뉴 추천 받기</Link>
 			</article>
 			<article className="item7">
-				<img src={"https://event.thecheck.co.kr/img/menuplus/rending/img7.jpg?v=1"} alt="잘 나가는 메뉴 단 3개로월 1천만원 수익 달성 가능! 바싹불고기(3인분) 마진 248% , 오돌뼈 마진 178%, 찜닭(4인분) 마진 171%"/>
+				<img src={"https://event.thecheck.co.kr/img/menuplus/rending/img7.jpg?v=2"} alt="잘 나가는 메뉴 단 3개로월 1천만원 수익 달성 가능! 바싹불고기(3인분) 마진 248% , 오돌뼈 마진 178%, 찜닭(4인분) 마진 171%"/>
 			</article>
 			<article className="item8">
 				<img src={"https://event.thecheck.co.kr/img/menuplus/rending/img8.jpg?v=1"} alt="돈쭐나고 싶으세요? 인생맛집 5분창업 #샵인샵 #업종변경 #창업 #사업확장 #배달전문 #신메뉴추가 메뉴플러스"/>

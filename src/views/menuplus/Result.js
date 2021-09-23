@@ -1,13 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {useHistory} from "react-router-dom";
+// import {useHistory} from "react-router-dom";
 import {useQuestionState} from "components/menuplus/QuestionContext";
-import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import {Link} from "react-router-dom";
 
 const Result = ({ match }) => {
 	let resultIndex = match.params.index * 1;
 	const [loading, setLoading] = useState(true);
-	const history = useHistory();
+	// const history = useHistory();
 	// const shareUrl = ["https://baro.lk/LGggR","https://baro.lk/zaKPH","https://baro.lk/o1IRG","https://baro.lk/WdbYT","https://baro.lk/2YG9z","https://baro.lk/m0jHu","https://baro.lk/Z8FxF","https://baro.lk/kKAnA"];
 	const shareUrl = "https://baro.lk/lc5Za";
 
@@ -23,8 +23,6 @@ const Result = ({ match }) => {
 	const menu = resultList[resultIndex].menu;
 	useEffect(()=>{
 		window.document.getElementsByTagName("html")[0].className = "question_result";
-	});
-	useEffect(()=>{
 		setLoading(false);
 	},[]);
 
@@ -84,13 +82,13 @@ const Result = ({ match }) => {
 	}
 	return (
 		<section className={(resultIndex === 0 ? "zero ":"") + (loading ? " hide" : "")}>
-			<HelmetProvider>
-				<Helmet>
-					<meta property="og:title" content="메뉴플러스"/>
-					<meta property="og:image" content="https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg"/>
-					<meta property="og:description" content="돈쭐나고 싶은 사장님을 위해 딱 맞는 인생 메뉴를 찾아드립니다"/>
-				</Helmet>
-			</HelmetProvider>
+			<Helmet>
+				<title>1분 맞춤메뉴 테스트 결과 - 더체크 메뉴플러스</title>
+				<meta name="description" content="더체크 메뉴플러스" data-react-helmet="true"/> 
+				<meta property="og:title" content="1분 맞춤메뉴 테스트 결과" data-react-helmet="true"/>
+				<meta property="og:image" content="https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg" data-react-helmet="true"/>
+				<meta property="og:description" content="더체크 메뉴플러스" data-react-helmet="true"/>
+			</Helmet>
 			<article className="best">
 				<div className="inner">
 					<div className="unit">

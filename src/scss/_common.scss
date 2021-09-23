@@ -40,8 +40,8 @@
 			font-size: calcRem(16px);
 		}
 		&:active{
-			background: $white;
-			color:#501806;
+			background: #a00000;
+			color:$white;
 		}
 	}
 	.item1{
@@ -69,7 +69,9 @@
 		padding-bottom: 40px;
 		.btn{
 			margin-top: 30px;
-			border: 1px solid #501806;
+			&:active{
+				background: #a00000;
+			}
 		}
 	}
 	.item7{
@@ -83,7 +85,7 @@
 			color:#1A335B;
 			margin: 15px auto 20px;
 			&:active{
-				background: #1A335B;
+				background: #a00000;
 				color:$white;
 			}
 		}
@@ -99,9 +101,8 @@
 		.btn{
 			background: #1A335B;
 			&:active{
-				background: #FFFAF0;
-				color:#1A335B;
-				border: 1px solid #1A335B;
+				background: #a00000;
+				color:$white;
 			}
 		}
 	}

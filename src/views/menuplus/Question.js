@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 import Start from "components/menuplus/Start";
 import QuestionStep from "components/menuplus/StepContent";
-import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import {useQuestionState} from "components/menuplus/QuestionContext";
 
 const initialQuestion ={
@@ -93,8 +93,6 @@ const Question = () => {
 	}
 	useEffect(()=>{
 		window.document.getElementsByTagName("html")[0].className = "question";
-	});
-	useEffect(()=>{
 		setLoading(false);
 	},[]);
 	
@@ -176,13 +174,13 @@ const Question = () => {
 	}
 	return (
 		<>
-			<HelmetProvider>
-				<Helmet>
-					<meta property="og:title" content="메뉴플러스"/>
-					<meta property="og:image" content="https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg?v=1"/>
-					<meta property="og:description" content="돈쭐나고 싶은 사장님을 위해 딱 맞는 인생 메뉴를 찾아드립니다"/>
-				</Helmet>
-			</HelmetProvider>
+			<Helmet>
+				<title>1분 맞춤메뉴 테스트 - 더체크 메뉴플러스</title>
+				<meta name="description" content="더체크 메뉴플러스" data-react-helmet="true"/> 
+				<meta property="og:title" content="1분 맞춤메뉴 테스트" data-react-helmet="true"/>
+				<meta property="og:image" content="https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg?v=1" data-react-helmet="true"/>
+				<meta property="og:description" content="더체크 메뉴플러스" data-react-helmet="true"/>
+			</Helmet>
 			{
 				!loading ? (
 					step === 0 ? <Start getNextStep={getNextStep}/> : step < 9 ? <QuestionStep getNextStep={getNextStep} getAnswer={getAnswer} step={step} answer={answer} getPrevStep={getPrevStep} data={initialQuestion["step"+step]}/>:""
