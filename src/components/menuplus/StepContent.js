@@ -20,7 +20,7 @@ const QestionStep = (props) => {
 			setLoading(true);
 			setTimeout(function() {
 				props.getNextStep(props.step+1); 
-			  }, 2500);
+			}, 2500);
 			return;
 		}
 		const temp = e.target.getAttribute("data-result");

@@ -14,7 +14,7 @@ const Start = (props) => {
 						objectType: 'feed',
 						content: {
 							title: "메뉴플러스사장님을 위한 맞춤메뉴를 찾아드려요",
-							imageUrl: "https://event.thecheck.co.kr/img/img1.jpg?v=1",
+							imageUrl: "https://event.thecheck.co.kr/img/menuplus/rending/img1.jpg",
 							link: {
 								mobileWebUrl: "https://event.thecheck.co.kr/#/menuplus/question",
 								webUrl: "https://event.thecheck.co.kr/#/menuplus/question",

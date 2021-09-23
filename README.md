@@ -1,4 +1,4 @@
 # 배포
-https://s3.console.aws.amazon.com/s3/buckets/thecheck-web?region=ap-northeast-2&tab=objects
+https://event.thecheck.co.kr/
 
-thecheck-web
+s3 : thecheck-web 
